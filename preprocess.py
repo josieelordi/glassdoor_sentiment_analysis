@@ -3,8 +3,9 @@ import string
 import pandas as pd
 
 def load_data(fname):
-    'Reads in a csv file and return a dataframe.'
-    return pd.read_csv(fname, nrows = 3000)
+    'Reads in a csv file and return a dataframe'
+    print('HELLO')
+    return pd.read_csv(fname, nrows = 8000)
 
 def split_data(df):
     '''
@@ -17,21 +18,24 @@ def split_data(df):
 
 def preprocess(df):
     '''
-    Preprocess features and returns a word to word location dictionary
+    Preprocess features and tokenize dataframe
     '''
+
     stopwords = ['a', 'all', 'an', 'and', 'any', 'are', 'as', 'at', 'be', 'been', 'but', 'by', 'few', 'from', 'for', 'have', 'he', 'her', 'here', 'him', 'his', 'how', 'i', 'in', 'is', 'it', 'its', 'many', 'me', 'my', 'none', 'of', 'on', 'or', 'our', 'she', 'some', 'the', 'their', 'them', 'there', 'they', 'that', 'this', 'to', 'us', 'was', 'what', 'when', 'where', 'which', 'who', 'why', 'will', 'with', 'you', 'your', 've', 'm', 't', 's', 'll', 'l']
 
-    word_dict = {}
+    dataDict = {'company': [], 'summary': [], 'pros': [], 'cons': [], 'advice-to-mgmt': []}
+
+    'Fill data dictionary with tokenized Glassdoor data'
     nlp = spacy.load("en_core_web_sm")
     for column in df:
-        if column != 'company':
+        if column == 'company':
+            dataDict[column] = [data for data in df[column]]
+        elif column != 'company':
             for count, data in enumerate(df[column]):
                 tokenized = nlp(str(data).lower())
+                temp = []
                 for token in tokenized:
-                    if token.text not in word_dict and token.text not in stopwords and token.text not in string.digits and token.text not in string.punctuation:
-                        word_dict[token.text] = len(word_dict)
-    return word_dict
-
-data = load_data('10k_reviews.csv')
-features, labels = split_data(data)
-print(preprocess(features))
+                    if token.text not in stopwords and token.text not in string.digits and token.text not in string.punctuation:
+                        temp.append(token.text)
+                dataDict[column].append(' '.join(temp))
+    return pd.DataFrame.from_dict(dataDict)
