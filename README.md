@@ -1,4 +1,1 @@
-dskjfksdjflaksdjflsadf
-asdfjasdkhfkjsdahf
-sdfkjhasdkjfhasdf
-adfksdajhfsjdf
+pip install -U spacy
