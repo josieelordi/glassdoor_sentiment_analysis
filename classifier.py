@@ -1,19 +1,16 @@
-# Josie Elori, Tyler Eastman, Daniel Chandross, Pranav Ajith, Rana Makki
+# EECS 486 - Final Project/classifer.py
+# Pranav Ajith, Daniel Chandross, Tyler Eastman, Josie Elordi, Rana Makki
 
 import os
 import re
 import sys
-import preprocess.py
-import spacy
-import string
-import pandas as pd
+from preprocess import load_data, split_data, preprocess
+
+def main(in_file):
+    df = load_data(in_file)
+    features, labels = split_data(df)
+    preprocess(features)
+
 
 if __name__ == '__main__':
-	print("BIOOOOOOTCH")
-
-	in_file = sys.argv[1]
-	print(in_file)
-
-	df = load_data(in_file)
-
-	print(df)
+	main(sys.argv[1])
