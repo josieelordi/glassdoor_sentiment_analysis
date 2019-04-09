@@ -1,3 +1,5 @@
+# EECS 486 - Final Project/preprocess.py
+# Pranav Ajith, Daniel Chandross, Tyler Eastman, Josie Elordi, Rana Makki
 import spacy
 import string
 import pandas as pd
