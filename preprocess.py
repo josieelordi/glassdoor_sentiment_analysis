@@ -32,6 +32,6 @@ def preprocess(df):
                         word_dict[token.text] = len(word_dict)
     return word_dict
 
-data = load_data('employee_reviews.csv')
+data = load_data('10k_reviews.csv')
 features, labels = split_data(data)
 print(preprocess(features))
