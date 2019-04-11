@@ -6,17 +6,16 @@ import pandas as pd
 
 def load_data(fname):
     'Reads in a csv file and return a dataframe'
-    print('HELLO')
-    return pd.read_csv(fname, nrows = 8000)
+    return pd.read_csv(fname, nrows = 10000)
 
 def split_data(df):
     '''
-    Split data into features with corresponding labels
+    Split data into features and corresponding labels
     Numbers in iloc correspond to column index of csv file
     '''
     features = df.iloc[:, [1, 5, 6, 7, 8]]
     labels = df.iloc[:, [9, 10, 11, 12, 13, 14, 15]]
-    return features, labels
+    return features, labels[:8000], labels[8000:]
 
 def preprocess(df):
     '''
@@ -40,4 +39,5 @@ def preprocess(df):
                     if token.text not in stopwords and token.text not in string.digits and token.text not in string.punctuation:
                         temp.append(token.text)
                 dataDict[column].append(' '.join(temp))
-    return pd.DataFrame.from_dict(dataDict)
+    features = pd.DataFrame.from_dict(dataDict)
+    return features[:8000], features[8000:]
