@@ -1,0 +1,119 @@
+-- company --
+SUMMARY
+Naive Bayes Accuracy: 0.5455
+Suppor Vector Machine Accuracy: 0.546
+Decision Tree Accuracy: 0.4965
+Neural Network Accuracy: 0.51
+Random Forest Accuracy: 0.5095
+PROS
+Naive Bayes Accuracy: 0.54
+Suppor Vector Machine Accuracy: 0.609
+Decision Tree Accuracy: 0.493
+Neural Network Accuracy: 0.526
+Random Forest Accuracy: 0.556
+CONS
+Naive Bayes Accuracy: 0.5235
+Suppor Vector Machine Accuracy: 0.573
+Decision Tree Accuracy: 0.456
+Neural Network Accuracy: 0.497
+Random Forest Accuracy: 0.525
+
+-- overall ratings --
+SUMMARY
+Naive Bayes Accuracy: 0.42
+Suppor Vector Machine Accuracy: 0.4255
+Decision Tree Accuracy: 0.394
+Neural Network Accuracy: 0.418
+Random Forest Accuracy: 0.416
+PROS
+Naive Bayes Accuracy: 0.3895
+Suppor Vector Machine Accuracy: 0.3955
+Decision Tree Accuracy: 0.309
+Neural Network Accuracy: 0.334
+Random Forest Accuracy: 0.369
+CONS
+Naive Bayes Accuracy: 0.4105
+Suppor Vector Machine Accuracy: 0.4225
+Decision Tree Accuracy: 0.338
+Neural Network Accuracy: 0.3795
+Random Forest Accuracy: 0.3905
+
+-- culture-values-stars --
+SUMMARY
+Naive Bayes Accuracy: 0.3315
+Suppor Vector Machine Accuracy: 0.3375
+Decision Tree Accuracy: 0.277
+Neural Network Accuracy: 0.2845
+Random Forest Accuracy: 0.297
+PROS
+Naive Bayes Accuracy: 0.324
+Suppor Vector Machine Accuracy: 0.3385
+Decision Tree Accuracy: 0.2655
+Neural Network Accuracy: 0.2665
+Random Forest Accuracy: 0.3115
+CONS
+Naive Bayes Accuracy: 0.3195
+Suppor Vector Machine Accuracy: 0.344
+Decision Tree Accuracy: 0.241
+Neural Network Accuracy: 0.2615
+Random Forest Accuracy: 0.2975
+
+-- growth --
+SUMMARY
+Naive Bayes Accuracy: 0.2925
+Suppor Vector Machine Accuracy: 0.302
+Decision Tree Accuracy: 0.2495
+Neural Network Accuracy: 0.277
+Random Forest Accuracy: 0.262
+PROS
+Naive Bayes Accuracy: 0.287
+Suppor Vector Machine Accuracy: 0.2945
+Decision Tree Accuracy: 0.2265
+Neural Network Accuracy: 0.2435
+Random Forest Accuracy: 0.2775
+CONS
+Naive Bayes Accuracy: 0.304
+Suppor Vector Machine Accuracy: 0.321
+Decision Tree Accuracy: 0.2485
+Neural Network Accuracy: 0.2625
+Random Forest Accuracy: 0.2895
+
+-- compensation --
+SUMMARY
+Naive Bayes Accuracy: 0.3375
+Suppor Vector Machine Accuracy: 0.3345
+Decision Tree Accuracy: 0.29
+Neural Network Accuracy: 0.311
+Random Forest Accuracy: 0.3115
+PROS
+Naive Bayes Accuracy: 0.3325
+Suppor Vector Machine Accuracy: 0.3525
+Decision Tree Accuracy: 0.265
+Neural Network Accuracy: 0.293
+Random Forest Accuracy: 0.3045
+CONS
+Naive Bayes Accuracy: 0.342
+Suppor Vector Machine Accuracy: 0.345
+Decision Tree Accuracy: 0.273
+Neural Network Accuracy: 0.2675
+Random Forest Accuracy: 0.312
+
+-- management -- 
+SUMMARY
+Naive Bayes Accuracy: 0.2685
+Suppor Vector Machine Accuracy: 0.2755
+Decision Tree Accuracy: 0.2415
+Neural Network Accuracy: 0.2585
+Random Forest Accuracy: 0.2445
+PROS
+Naive Bayes Accuracy: 0.2515
+Suppor Vector Machine Accuracy: 0.2925
+Decision Tree Accuracy: 0.2105
+Neural Network Accuracy: 0.2155
+Random Forest Accuracy: 0.256
+CONS
+Naive Bayes Accuracy: 0.269
+Suppor Vector Machine Accuracy: 0.301
+Decision Tree Accuracy: 0.231
+Neural Network Accuracy: 0.236
+Random Forest Accuracy: 0.263
