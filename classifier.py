@@ -238,7 +238,7 @@ def randomForest(train, test, Y_train, Y_test, column):
     '''
 
     'Creates a Decision Tree forest of size 40 '
-    clfs = [tree.DecisionTreeClassifier(criterion = 'entropy', ) for i in range(1, 41)]
+    clfs = [tree.DecisionTreeClassifier(criterion = 'entropy') for i in range(1, 41)]
 
     'For each Decision Tree, fit a classifer to the bootstrapped data'
     for clf in clfs:
