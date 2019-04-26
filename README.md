@@ -12,7 +12,7 @@ The included files:
 
 employee_review.csv
 
-*X_ hold textual data like summary, pros, cons, etc. While Y_ is the corresponding numerical label for x test*
+**X_ hold textual data like summary, pros, cons, etc. While Y_ is the corresponding numerical label for x test**
 
 X_test.csv
 X_train.csv
