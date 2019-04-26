@@ -12,6 +12,7 @@ from sklearn.svm import SVC
 from collections import Counter
 from sklearn import metrics, utils
 from sklearn.naive_bayes import MultinomialNB
+from sklearn.metrics.pairwise import cosine_similarity
 from sklearn.ensemble import AdaBoostClassifier
 from sklearn.neural_network import MLPClassifier
 from sklearn.model_selection import StratifiedKFold
@@ -32,6 +33,7 @@ def main(in_file):
     Y_train = pd.read_csv('Y_train.csv')
     Y_test = pd.read_csv('Y_test.csv')
 
+    cosineSim(X_train)
     classProbs, condProbs, vocabSize, proVocabSize, conVocabSize = trainSentimentAnalysis(X_train)
 
     accuracy = 0
@@ -50,7 +52,6 @@ def main(in_file):
 
     trainModels(X_train, X_test, Y_train, Y_test)
     return 'done'
-
 def trainModels(X_train, X_test, Y_train, Y_test):
     xcolumns = ['summary', 'pros', 'cons', 'advice-to-mgmt']
     ycolumns = ['company', 'overall-ratings', 'work-balance-stars', 'culture-values-stars','carrer-opportunities-stars','comp-benefit-stars','senior-mangemnet-stars','helpful-count']
@@ -67,7 +68,14 @@ def trainModels(X_train, X_test, Y_train, Y_test):
             print('Random Forest accuracy for', ycolumn + ':', randomForest(train, test, Y_train, Y_test, ycolumn))
             print('AdaBoost accuracy for', ycolumn + ':', adaBoost(train, test, Y_train, Y_test, ycolumn))
     return 'done'
-
+def cosineSim(X_train):
+    vectorizer = CountVectorizer()
+    train = vectorizer.fit_transform(X_train['summary'].values.astype('U'))
+    sim = []
+    for i in train:
+        for j in train:
+            sim.append(cosine_similarity(i, j))
+    return sim
 def trainSentimentAnalysis(X_train):
     '''
     Predict whether given text is a Pro or a Con
@@ -238,7 +246,7 @@ def randomForest(train, test, Y_train, Y_test, column):
     '''
 
     'Creates a Decision Tree forest of size 40 '
-    clfs = [tree.DecisionTreeClassifier(criterion = 'entropy') for i in range(1, 41)]
+    clfs = [tree.DecisionTreeClassifier(criterion = 'entropy', ) for i in range(1, 41)]
 
     'For each Decision Tree, fit a classifer to the bootstrapped data'
     for clf in clfs:
